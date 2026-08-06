@@ -30,7 +30,3 @@ text fields, cards, toasts, dialogs, spinner, splash — is a custom `Graphics2D
 | `Ctrl + S` | Export CSV |
 | `Ctrl + C` | Copy result |
 | `Ctrl + R` | Refresh rates |
-
-## License
-
-MIT
