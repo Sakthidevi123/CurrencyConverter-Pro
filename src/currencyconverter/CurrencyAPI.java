@@ -11,20 +11,9 @@ import java.util.HashMap;
 import java.util.Map;
 import org.json.JSONObject;
 
-/**
- * All exchange rate networking lives here. The UI never talks to the network
- * directly; it only consumes {@link RateResult} objects.
- *
- * <p>Insert your ExchangeRate-API key below. When the key is left empty the
- * class automatically falls back to the free, key-less endpoint so that the
- * application still runs out of the box.</p>
- */
 public final class CurrencyAPI {
 
-    /* ------------------------------------------------------------------
-     * Developer: paste your exchangerate-api.com key between the quotes.
-     * ------------------------------------------------------------------ */
-    private static final String API_KEY = "ad8908e90be3167964916ffc";
+    private static final String API_KEY = "";
 
     private static final String KEYED_ENDPOINT = "https://v6.exchangerate-api.com/v6/%s/latest/%s";
     private static final String FREE_ENDPOINT  = "https://open.er-api.com/v6/latest/%s";
@@ -88,11 +77,14 @@ public final class CurrencyAPI {
             writeCache(base, payload);
             return new RateResult(base, rates, LocalDateTime.now(), false);
         } catch (Exception online) {
-            RateResult cached = readCache(base);
-            if (cached != null) return cached;
-            throw new RateUnavailableException(
-                    "Exchange rates could not be retrieved and no offline data is available.");
-        }
+    online.printStackTrace();   
+
+    RateResult cached = readCache(base);
+    if (cached != null) return cached;
+
+    throw new RateUnavailableException(
+            "Exchange rates could not be retrieved and no offline data is available.");
+}
     }
 
     /** Convenience helper returning a single pair rate. */

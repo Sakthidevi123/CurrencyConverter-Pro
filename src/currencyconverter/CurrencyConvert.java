@@ -190,13 +190,22 @@ public final class CurrencyConvert extends JFrame {
     }
 
     private RoundedButton headerButton(String text, String tooltip) {
-        RoundedButton button = new RoundedButton(text, RoundedButton.Variant.GHOST);
-        button.setToolTipText(tooltip);
-        button.setFont(new Font("Segoe UI", Font.BOLD, 13));
-        button.applyPalette(Color.WHITE, Color.WHITE, Color.WHITE, Color.WHITE, null);
-        button.setPreferredSize(new Dimension(96, 36));
-        return button;
-    }
+    RoundedButton button = new RoundedButton(text, RoundedButton.Variant.GHOST);
+    button.setToolTipText(tooltip);
+    button.setFont(new Font("Segoe UI", Font.BOLD, 13));
+
+    // Header buttons: keep white text and use blue hover background
+    button.applyPalette(
+            new Color(0x2563EB),   // primary / hover tint source
+            new Color(0x60A5FA),   // accent
+            new Color(0x1D4ED8),   // surface
+            Color.WHITE,            // text
+            null                    // no border
+    );
+
+    button.setPreferredSize(new Dimension(96, 36));
+    return button;
+}
 
    //body
     

@@ -1,0 +1,29 @@
+# NetBeans / Java build files
+/build/
+/nbbuild/
+/nbdist/
+
+# Packaged application
+/installer/
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+
+# User-specific application data
+settings.properties
+theme.properties
+favorites.txt
+history.txt
+rates.cache
+
+# NetBeans private files
+/nbproject/private/
+
+# Generated JAR
+/dist/*.jar
+
+# OS files
+.DS_Store
+Thumbs.db
